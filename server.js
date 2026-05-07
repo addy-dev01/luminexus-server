@@ -8,19 +8,6 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 app.use(express.json());
-
-// ════════════════════════════════════════════════════════════
-//  EMAIL — Brevo HTTP API (avoids SMTP port-blocking on Railway)
-//
-//  SETUP:
-//  1. Go to https://brevo.com → Sign Up Free
-//  2. Account menu → SMTP & API → API Keys tab → Generate a new API key
-//  3. Add Railway env vars:
-//       BREVO_API_KEY  = xkeysib-xxxxxxxxxxxxxxxxxxxxxxxx
-//       EMAIL_FROM     = customerluminexus@gmail.com  (must be verified sender in Brevo)
-//       EMAIL_USER     = customerluminexus@gmail.com  (admin inbox for tickets/contact)
-// ════════════════════════════════════════════════════════════
-
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const EMAIL_FROM    = process.env.EMAIL_FROM || 'customerluminexus@gmail.com';
 
